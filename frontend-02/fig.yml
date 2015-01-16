@@ -26,3 +26,11 @@ web:
     - .:/code
   environment:
     - SERVICE_NAME=web
+
+wordpress:
+  build: ./wordpress
+  command: php -S 0.0.0.0:8000 -t /code/wordpress
+  ports:
+    - "8000:8000"
+  environment:
+    - SERVICE_NAME=wordpress
