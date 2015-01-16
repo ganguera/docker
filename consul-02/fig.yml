@@ -1,0 +1,21 @@
+consul:
+  hostname: {{HOSTNAME}}
+  image: socialpoint/consul
+  command: -server -advertise {{NODE_IP}} -join 172.16.10.11
+  ports:
+    - "8300:8300"
+    - "8301:8301"
+    - "8301:8301/udp"
+    - "8302:8302"
+    - "8302:8302/udp"
+    - "8400:8400"
+    - "8500:8500"
+    - "53:53"
+    - "53:53/udp"
+
+registrator:
+  hostname: {{HOSTNAME}}
+  image: progrium/registrator
+  volumes:
+    - /var/run/:/tmp/
+  command: "consul://{{NODE_IP}}:8500"
