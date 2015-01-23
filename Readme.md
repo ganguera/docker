@@ -21,11 +21,11 @@ Services provided:
 
 ## Usage
 1. Clone this repository
-2. Execute ```bash vagrant up``` to start the six nodes
-3. SSH in every node ```bash vagrant ssh ${HOSTNAME}```
-4. From "/home/vagrant/${HOSTNAME}" execute ```bash sudo fig up``` to start every container
+2. Execute ```vagrant up``` to start the six nodes
+3. SSH in every node ```vagrant ssh ${HOSTNAME}```
+4. From "/home/vagrant/${HOSTNAME}" execute ```sudo fig up``` to start every container
 5. Modify your local "/etc/hosts"
-```bash sudo -- sh -c "echo 172.16.10.14 app.example.com wordpress.example.com >> /etc/hosts"```
+```sudo -- sh -c "echo 172.16.10.14 app.example.com wordpress.example.com >> /etc/hosts"```
 
 You'll find the following things at:
 - Consul Console: http://172.16.10.11:8500
