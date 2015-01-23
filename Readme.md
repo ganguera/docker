@@ -16,6 +16,7 @@ Services provided:
 ## Requirements
 - [VirtualBox](https://www.virtualbox.org/)
 - [Vagrant](https://www.vagrantup.com/)
+
 ### Optional but recommended
 - [Vagrant VB Guest Additions Plugin](https://github.com/dotless-de/vagrant-vbguest)
 
@@ -34,3 +35,9 @@ You'll find the following things at:
 - Wordpress: http://172.16.10.15:8000
 - Custom app through nginx: http://app.example.com
 - Wordpress through nginx: http://wordpress.example.com
+
+
+## Warning:
+The nginx container in frontend-01 will fail if it starts before both the "web" and "wordpress" services (containers) are registered in Consul.
+If this happens, please check both containers are running and rerun again the nginx container from "frontend-01:/home/vagrant/frontend-01":
+```sudo fig up nginx```
